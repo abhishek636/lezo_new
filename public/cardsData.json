@@ -1,0 +1,37 @@
+
+
+[
+  {
+    "id": 1,
+    "title": "Framework",
+    "imageSrc": "/framer.svg",
+    "popupContent": {
+      "additionalCardsFile": "/additionalcardsfiles/frameworkAdditionalCards.json"
+    }
+  },
+  {
+    "id": 2,
+    "title": "Agent Store",
+    "imageSrc": "/Agent.svg",
+    "popupContent": {
+      "additionalCardsFile": "/additionalcardsfiles/daoAdditionalCards.json"
+    }
+  },
+  {
+      "id": 3,
+      "title": "Partners",
+      "imageSrc": "/framer.svg",
+      "popupContent": {
+        "additionalCardsFile": "/additionalcardsfiles/daoAdditionalCards.json"
+      }
+  },
+  {
+      "id": 4,
+      "title": "DAO",
+      "imageSrc": "/DAO.svg",
+      "popupContent": {
+        "additionalCardsFile": "/additionalcardsfiles/daoAdditionalCards.json"
+      }
+  }
+]
+  
