@@ -1,5 +1,17 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: 'MyCustomFont';
+  src: url('/rawpixel.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Apply globally */
+body {
+  font-family: 'MyCustomFont', sans-serif;
+}
+
 @layer utilities {
   .gradient-border {
     box-shadow: inset 0 1px 0 #ffffff33;
