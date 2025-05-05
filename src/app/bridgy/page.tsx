@@ -210,7 +210,7 @@ export default function DraggableModal() {
             <div>
               {!accepted ? (
                 <div className="flex items-center justify-center flex-1 overflow-y-auto px-6 md:px-36 py-20 md:py-28">
-                  <div className={`p-4 space-y-4 bg-custom-gradient rounded-lg transition-opacity duration-300 ${
+                  <div className={`p-4 space-y-4 bg-custom-gradient rounded-lg transition-opacity duration-300 gradient-border ${
                     showTermsPopup ? 'opacity-0 pointer-events-none' : 'opacity-100'
                   }`}>
                     <h2 className="text-2xl text-white">Disclaimer</h2>
@@ -364,37 +364,37 @@ export default function DraggableModal() {
                       <div className="rounded-lg text-center text-[#4C4C4C] space-y-6 mb-4">
                         
                         <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 max-w-[744px] mx-auto">
-                          <div className="flex items-center justify-center bg-custom-gradient backdrop_custom rounded-lg p-3">
+                          <div className="flex items-center justify-center bg-custom-gradient backdrop_custom rounded-lg sm:px-8 sm:py-4 p-3">
                             <Image src="/grid1.1.svg" alt="From Token" width={51} height={24} className="object-contain" />
                             <Image src="/right arrow.svg" alt='right arrow.svg' width={20} height={20} />
                             <Image src="/grid1.2.svg" alt="To Token" width={51} height={24} className="object-contain" />
                           </div>
 
-                          <div className="flex items-center justify-center bg-custom-gradient backdrop_custom rounded-lg p-3">
+                          <div className="flex items-center justify-center bg-custom-gradient backdrop_custom rounded-lg sm:px-8 sm:py-4 p-3">
                             <Image src="/grid1.1.svg" alt="From Token" width={51} height={24} className="object-contain" />
                             <Image src="/right arrow.svg" alt='right arrow.svg' width={20} height={20} />
                             <Image src="/grid2.2.svg" alt="To Token" width={99} height={24} className="object-contain sm:w-auto w-[60%]" />
                           </div>
 
-                          <div className="flex items-center justify-center bg-custom-gradient backdrop_custom rounded-lg p-3">
+                          <div className="flex items-center justify-center bg-custom-gradient backdrop_custom rounded-lg sm:px-8 sm:py-4 p-3">
                             <Image src="/grid1.1.svg" alt="From Token" width={51} height={24} className="object-contain" />
                             <Image src="/right arrow.svg" alt='right arrow.svg' width={20} height={20} />
                             <Image src="/grid3.2.svg" alt="To Token" width={51} height={24} className="object-contain" />
                           </div>
 
-                          <div className="flex items-center justify-center bg-custom-gradient backdrop_custom rounded-lg p-3">
+                          <div className="flex items-center justify-center bg-custom-gradient backdrop_custom rounded-lg sm:px-8 sm:py-4 p-3">
                             <Image src="/grid1.2.svg" alt="From Token" width={51} height={24} className="object-contain" />
                             <Image src="/right arrow.svg" alt='right arrow.svg' width={20} height={20} />
                             <Image src="/grid1.1.svg" alt="To Token" width={51} height={24} className="object-contain" />
                           </div>
 
-                          <div className="flex items-center justify-center bg-custom-gradient backdrop_custom rounded-lg p-3">
+                          <div className="flex items-center justify-center bg-custom-gradient backdrop_custom rounded-lg sm:px-8 sm:py-4 p-3">
                             <Image src="/grid2.2.svg" alt="From Token" width={99} height={24} className="object-contain sm:w-auto w-[60%]" />
                             <Image src="/right arrow.svg" alt='right arrow.svg' width={20} height={20} />
                             <Image src="/grid1.1.svg" alt="To Token" width={51} height={24} className="object-contain " />
                           </div>
 
-                          <div className="flex items-center justify-center bg-custom-gradient backdrop_custom rounded-lg p-3">
+                          <div className="flex items-center justify-center bg-custom-gradient backdrop_custom rounded-lg sm:px-8 sm:py-4 p-3">
                             <Image src="/grid3.2.svg" alt="From Token" width={51} height={24} className="object-contain" />
                             <Image src="/right arrow.svg" alt='right arrow.svg' width={20} height={20} />
                             <Image src="/grid1.1.svg" alt="To Token" width={51} height={24} className="object-contain" />

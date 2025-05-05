@@ -62,7 +62,7 @@ body {
 
 /* Webkit browsers (Chrome, Safari, Edge) */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 5px;
 }
 
 ::-webkit-scrollbar-track {
@@ -73,7 +73,7 @@ body {
 ::-webkit-scrollbar-thumb {
   background: rgba(255, 255, 255, 0.6);
   border-radius: 10px;
-  max-height: 100px;
+  max-height: 40px;
 }
 
 ::-webkit-scrollbar-thumb:hover {

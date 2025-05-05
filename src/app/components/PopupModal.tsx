@@ -16,7 +16,7 @@ const PopupModal = ({ content, onClose }: Props) => (
       </div>
 
       {/* Content */}
-      <div className="flex-1 overflow-y-auto overflow-x-hidden sm:p-2 p-2 flex items-center justify-center">
+      <div className="flex-1 overflow-y-auto overflow-x-hidden sm:p-2 sm:pt-27 pt-20 flex items-center justify-center ">
         {content.additionalCards && content.additionalCards.length > 0 ? (
           <div className="grid md:grid-cols-4 sm:grid-cols-5 grid-cols-3 sm:gap-4 gap-2 w-full">
             {content.additionalCards.map((card) => (
