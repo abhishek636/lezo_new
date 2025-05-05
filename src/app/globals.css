@@ -1,15 +1,23 @@
 @import "tailwindcss";
 
 @font-face {
-  font-family: 'MyCustomFont';
-  src: url('/rawpixel.otf') format('opentype');
+  font-family: 'RawPixel';
+  src: url('/RawPixel.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'RawPixelBold';
+  src: url('/RawPixel-Bold.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
 
-/* Apply globally */
+/* Optional: apply it globally */
 body {
-  font-family: 'MyCustomFont', sans-serif;
+  font-family: 'RawPixel';
 }
 
 @layer utilities {
