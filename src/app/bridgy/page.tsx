@@ -219,7 +219,7 @@ export default function DraggableModal() {
           {!isMinimized && (
             <div>
               {!accepted ? (
-                <div className="flex items-center justify-center flex-1 overflow-y-scroll px-6 md:px-36 py-20 md:py-28">
+                <div className="flex items-center justify-center flex-1 overflow-y-auto px-6 md:px-36 py-20 md:py-28">
                   <div className={`p-4 space-y-4 bg-custom-gradient rounded-lg transition-opacity duration-300 gradient-border ${
                     showTermsPopup ? 'opacity-0 pointer-events-none' : 'opacity-100'
                   }`}>
