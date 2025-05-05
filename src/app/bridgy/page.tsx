@@ -170,7 +170,7 @@ export default function DraggableModal() {
           className={`absolute rounded-lg border border-gray-400 backdrop_custom shadow-xl ${
             isMaximized
               ? 'top-0 left-0 w-full sm:h-[100vh] h-full backdrop_custom bg-custom-gradient'
-              : 'lg:w-[890px] w-full bg-custom-gradient sm:min-h-auto min-h-[500px]'
+              : 'lg:w-[890px] w-full bg-custom-gradient sm:min-h-auto min-h-[460px]'
           }`}
           style={!isMaximized && isClient? { left: position.x, top: position.y } : {}}
         >
@@ -362,7 +362,7 @@ export default function DraggableModal() {
                       
                     </div>
                   </div>
-                  <div className={` p-2 rounded sm:mb-4 mb-0  ${!isMaximized ? 'sm:max-h-[300px] max-h-[calc(400px-100px)] overflow-y-scroll':'test_height'}`}>
+                  <div className={` p-2 rounded sm:mb-4 mb-0  ${!isMaximized ? 'sm:max-h-[300px] max-h-[calc(400px-100px)] overflow-y-auto':'test_height'}`}>
                     {messages.length === 0 && (
                        <div className="rounded-lg text-center text-[#4C4C4C] space-y-6">
                    
