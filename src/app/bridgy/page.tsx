@@ -35,6 +35,12 @@ export default function DraggableModal() {
   const [isMobile, setIsMobile] = useState(false);
   const [hideFooterSection, setHideFooterSection] = useState(false);
   const [showTermsPopup, setShowTermsPopup] = useState(false);
+  const [showChatHistory, setShowChatHistory] = useState(false);
+
+  // Handle button click to show/hide chat history
+  const handleChatHistoryClick = () => {
+    setShowChatHistory(prevState => !prevState);  // Toggle visibility of chat history
+  };
  
   const handleFooterClick = () => {
     setIsMinimized(true); // Set the modal to minimized state
@@ -311,7 +317,7 @@ export default function DraggableModal() {
                             <button>
                               <Image src="/create_chat.svg" alt='chat' width={38} height={38} />
                             </button>
-                            <button>
+                            <button onClick={handleChatHistoryClick}>
                               <Image src="/chat_history.svg" alt='chat' width={38} height={38} />
                             </button>
                           </div>
@@ -406,7 +412,7 @@ export default function DraggableModal() {
                         </div>
                     )}
                     
-                    {messages.map((msg, idx) => (
+                    {!showChatHistory && messages.map((msg, idx) => (
                       <div key={idx} className={`flex items-start mb-4 ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}>
                         {msg.role !== 'user' && (
                           <div className="w-6 h-6 bg-[#E4EAD8] text-[#4C4C4C] rounded-md flex items-center justify-center text-xs font-semibold mr-2">
@@ -418,23 +424,42 @@ export default function DraggableModal() {
                         </div>
                       </div>
                     ))}
+
+                    {showChatHistory && (
+                      <div className="chat-history-section rounded-lg text-center text-[#4C4C4C] space-y-2">
+                        <div className={`px-4 py-2 text-sm mx-auto  w-fit rounded-lg bg-white/40 text-[#4C4C4C] shadow-sm`}>
+                        Casual conversation and inquiries
+                        </div>
+                        <div className={`px-4 py-2 text-sm mx-auto  w-fit rounded-lg bg-white/40 text-[#4C4C4C] shadow-sm`}>
+                        Casual conversation and inquiries
+                        </div>
+                        <div className={`px-4 py-2 text-sm mx-auto  w-fit rounded-lg bg-white/40 text-[#4C4C4C] shadow-sm`}>
+                        Casual conversation and inquiries
+                        </div>
+                        <div className={`px-4 py-2 text-sm mx-auto  w-fit rounded-lg bg-white/40 text-[#4C4C4C] shadow-sm`}>
+                        Casual conversation and inquiries
+                        </div>
+                      </div>
+                    )}
                   </div>
  
-                  <div className=' absolute sm:px-auto px-3 bottom-10 left-0 right-0'>
-                    <div className="relative w-full  max-w-[744px] mx-auto">
-                      <input
-                        type="text"
-                        value={inputValue}
-                        onChange={(e) => setInputValue(e.target.value)}
-                        onKeyDown={handleKeyDown}
-                        placeholder="Bridge with Defy Agent.."
-                        className="w-full rounded-lg bg-custom-gradient px-4 py-5 pr-12 text-white placeholder-white/70 focus:outline-none"
-                      />
-                      <button type="submit" onClick={handleSendMessage} className="absolute top-1/2 right-2 -translate-y-1/2 bg-white/10 p-4 rounded-lg hover:bg-white/20 transition">
-                        <Image src="/rocket.png" alt="send" width={20} height={20} />
-                      </button>
+                  {!showChatHistory && (
+                    <div className='absolute sm:px-auto px-3 bottom-10 left-0 right-0'>
+                      <div className="relative w-full max-w-[744px] mx-auto">
+                        <input
+                          type="text"
+                          value={inputValue}
+                          onChange={(e) => setInputValue(e.target.value)}
+                          onKeyDown={handleKeyDown}
+                          placeholder="Bridge with Defy Agent.."
+                          className="w-full rounded-lg bg-custom-gradient px-4 py-5 pr-12 text-white placeholder-white/70 focus:outline-none"
+                        />
+                        <button type="submit" onClick={handleSendMessage} className="absolute top-1/2 right-2 -translate-y-1/2 bg-white/10 p-4 rounded-lg hover:bg-white/20 transition">
+                          <Image src="/rocket.png" alt="send" width={20} height={20} />
+                        </button>
+                      </div>
                     </div>
-                  </div>
+                  )}
                 </div>
               )}
             </div>
