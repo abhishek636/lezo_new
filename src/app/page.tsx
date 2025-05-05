@@ -52,7 +52,7 @@ export default function Home() {
   return (
     <div className="relative w-screen h-full overflow-hidden">
       <BackgroundVideo />
-      <div className="relative w-screen h-full overflow-hidden">
+      <div className="relative w-screen h-[100vh] overflow-hidden">
         <MarqueeBanner text={marqueeText} />
         <Logo />
         <CardGrid cards={cardsData} onCardClick={openPopup} hide={isPopupOpen} />
