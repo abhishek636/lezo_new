@@ -1,5 +1,5 @@
 const BackgroundVideo = () => (
-    <div className="absolute top-1/2 left-1/2 w-[177.77vh] h-[100vh] -translate-x-1/2 -translate-y-1/2">
+    <div className="absolute top-1/2 sm:left-1/2 left-0 w-[177.77vh] h-[100vh] -translate-x-1/2 -translate-y-1/2">
   <video
     className="w-full h-full object-cover scale-125"
     src="/newvideo.mov"
