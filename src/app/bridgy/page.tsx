@@ -160,7 +160,7 @@ export default function DraggableModal() {
          onTouchEnd={handleTouchEnd}>
         <div
           ref={modalRef}
-          className={`absolute rounded-lg border border-gray-400 backdrop_custom shadow-xl ${isMaximized ? 'top-0 left-0 w-full sm:h-[calc(100vh-150px)] h-[calc(100vh-70px)] backdrop_custom bg-custom-gradient' : 'lg:w-[890px] w-full bg-custom-gradient'}`}
+          className={`absolute rounded-lg border border-gray-400 backdrop_custom shadow-xl ${isMaximized ? 'top-0 left-0 w-full sm:h-[calc(100vh-250px)] h-[calc(100vh-70px)] backdrop_custom bg-custom-gradient' : 'lg:w-[890px] w-full bg-custom-gradient'}`}
           style={!isMaximized && isClient? { left: position.x, top: position.y } : {}}
         >
           {/* Header */}
