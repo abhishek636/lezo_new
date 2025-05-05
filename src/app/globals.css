@@ -32,7 +32,7 @@ body {
 .rawpixel{
   font-family: var(--raw-pixel), sans-serif;
   letter-spacing: 0.02em;
-  line-height: normal;
+  line-height: 100%;
 }
 
 /* globals.css or your stylesheet */
