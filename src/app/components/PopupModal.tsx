@@ -16,7 +16,7 @@ const PopupModal = ({ content, onClose }: Props) => (
       </div>
 
       {/* Content */}
-      <div className="flex-1 overflow-y-auto overflow-x-hidden sm:p-2 sm:pt-27 pt-20 flex items-center justify-center ">
+      <div className="flex-1 overflow-y-auto overflow-x-hidden sm:p-2 flex items-start justify-center ">
         {content.additionalCards && content.additionalCards.length > 0 ? (
           <div className="grid md:grid-cols-4 sm:grid-cols-5 grid-cols-3 sm:gap-4 gap-2 w-full">
             {content.additionalCards.map((card) => (
@@ -29,7 +29,7 @@ const PopupModal = ({ content, onClose }: Props) => (
             ))}
           </div>
         ) : (
-          <p className="text-[#CDDDDE] rawpixel text-2xl font-bold uppercase text-center">
+          <p className="text-[#CDDDDE] rawpixel text-2xl font-bold uppercase text-center flex items-center h-full justify-center">
             {content.title === 'Partners'
               ? `Reserved for future partnerships`
               : `Reserved for future ${content.title}`}
