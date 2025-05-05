@@ -147,7 +147,7 @@ export default function DraggableModal() {
     setTimeout(() => {
       const botMessage: Message = { role: 'bot', text: `You said: "${userMessage.text}"` };
       setMessages(prev => [...prev, botMessage]);
-    }, 500);
+    },0);
   };
  
   const handleKeyDown = (e: React.KeyboardEvent) => {
