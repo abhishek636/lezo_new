@@ -427,16 +427,16 @@ export default function DraggableModal() {
 
                     {showChatHistory && (
                       <div className="chat-history-section rounded-lg text-center text-[#4C4C4C] space-y-2">
-                        <div className={`px-4 py-2 text-sm mx-auto  w-fit rounded-lg bg-white/40 text-[#4C4C4C] shadow-sm`}>
+                        <div className={`px-4 py-2 text-sm mx-auto  w-fit rounded-lg bg-white/40 text-white shadow-sm`}>
                         Casual conversation and inquiries
                         </div>
-                        <div className={`px-4 py-2 text-sm mx-auto  w-fit rounded-lg bg-white/40 text-[#4C4C4C] shadow-sm`}>
+                        <div className={`px-4 py-2 text-sm mx-auto  w-fit rounded-lg bg-white/40 text-white shadow-sm`}>
                         Casual conversation and inquiries
                         </div>
-                        <div className={`px-4 py-2 text-sm mx-auto  w-fit rounded-lg bg-white/40 text-[#4C4C4C] shadow-sm`}>
+                        <div className={`px-4 py-2 text-sm mx-auto  w-fit rounded-lg bg-white/40 text-white shadow-sm`}>
                         Casual conversation and inquiries
                         </div>
-                        <div className={`px-4 py-2 text-sm mx-auto  w-fit rounded-lg bg-white/40 text-[#4C4C4C] shadow-sm`}>
+                        <div className={`px-4 py-2 text-sm mx-auto  w-fit rounded-lg bg-white/40 text-white shadow-sm`}>
                         Casual conversation and inquiries
                         </div>
                       </div>
