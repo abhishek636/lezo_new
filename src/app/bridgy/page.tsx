@@ -33,7 +33,7 @@ export default function DraggableModal() {
  
   const [isDropdownOpen, setDropdownOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
-  const [hideFooterSection, setHideFooterSection] = useState(true);
+  const [hideFooterSection, setHideFooterSection] = useState(false);
   const [showTermsPopup, setShowTermsPopup] = useState(false);
  
   const handleFooterClick = () => {
@@ -120,12 +120,13 @@ export default function DraggableModal() {
   const handleMouseUp = () => setIsDragging(false);
  
   const handleMinimize = () => {
-    // Store the minimized state and position in sessionStorage
     sessionStorage.setItem('modalMinimized', 'true');
     sessionStorage.setItem('modalPosition', JSON.stringify(position));
- 
+  
     setIsMinimized(true);
-    router.push('/'); // Redirect to home page
+    setIsMaximized(false);
+    setHideFooterSection(false); // Show footer on minimize
+    router.push('/');
   };
  
   const isAcceptEnabled = checkbox1 && checkbox2;
@@ -160,7 +161,7 @@ export default function DraggableModal() {
          onTouchEnd={handleTouchEnd}>
         <div
           ref={modalRef}
-          className={`absolute rounded-lg border border-gray-400 backdrop_custom shadow-xl ${isMaximized ? 'top-0 left-0 w-full sm:h-[calc(100vh-250px)] h-[calc(100vh-70px)] backdrop_custom bg-custom-gradient' : 'lg:w-[890px] w-full bg-custom-gradient'}`}
+          className={`absolute rounded-lg border border-gray-400 backdrop_custom shadow-xl ${isMaximized ? 'top-0 left-0 w-full sm:h-[100vh] h-[calc(100vh-70px)] backdrop_custom bg-custom-gradient' : 'lg:w-[890px] w-full bg-custom-gradient'}`}
           style={!isMaximized && isClient? { left: position.x, top: position.y } : {}}
         >
           {/* Header */}
@@ -173,20 +174,31 @@ export default function DraggableModal() {
                   }`}
           >
             <div className="flex space-x-2">
-              <button
-                onClick={() => {
-                  setIsVisible(false);
-                  router.push('/');
-                }}
-              >
-                <Image src='/modal_close.svg' alt='Close_model.svg' width={18} height={18}/>
+            <button
+              onClick={() => {
+                setIsVisible(false);
+                setIsMaximized(false);
+                setHideFooterSection(false); // Show footer on close
+                router.push('/');
+              }}
+            >
+              <Image src='/modal_close.svg' alt='Close_model.svg' width={18} height={18} />
               </button>
               {/* <button className="w-3 h-3 bg-yellow-500 rounded-full" onClick={(e) => { e.stopPropagation(); setIsMinimized(!isMinimized); }} /> */}
               <button  onClick={handleMinimize} >
                 <Image src='/minimizeicon.svg' alt='minimizeicon.svg' width={18} height={18}/>
               </button>
-              <button  onClick={(e) => { e.stopPropagation(); setIsMaximized(!isMaximized); setIsMinimized(false); }} >
-                <Image src='/maximize.svg' alt='maximize.svg' width={18} height={18}/></button>
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  const newMaxState = !isMaximized;
+                  setIsMaximized(newMaxState);
+                  setIsMinimized(false);
+                  setHideFooterSection(newMaxState); // hide footer if maximized, show otherwise
+                }}
+              >
+                <Image src='/maximize.svg' alt='maximize.svg' width={18} height={18} />
+              </button>
               </div>
             <div className="absolute inset-0 flex justify-center items-center pointer-events-none">
               <Image src="/bridgy_logo.svg" alt="LEZO Logo" width={126} height={21} />
@@ -430,7 +442,7 @@ export default function DraggableModal() {
           )}
         </div>
       </div>
-      <Footer hideSection={hideFooterSection} onClick={handleFooterClick}/>
+      {!hideFooterSection && <Footer hideSection={hideFooterSection} onClick={handleFooterClick}/>}
     </div>
   );
 }
