@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Outfit } from "next/font/google";
+import localfont from "next/font/local";
 import "./globals.css";
 
 // Import Outfit font
@@ -8,6 +9,16 @@ const outfit = Outfit({
   variable: "--font-outfit", // Custom variable name
   display: "swap", // Optional: ensures better performance for font loading
 });
+
+const RawPixel = localfont({
+  src:[
+    {
+      path:'../../public/fonts/RawPixel.ttf',
+      weight:"400"
+    }
+  ],
+  variable:"--raw-pixel",
+})
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -21,7 +32,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={outfit.variable}>
-      <body className={`${outfit.variable} antialiased`}>
+      <body className={`${outfit.variable} ${RawPixel.variable} antialiased`}>
         {children}
       </body>
     </html>

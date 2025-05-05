@@ -79,7 +79,7 @@ const Footer = ({ hideSection, onClick }: FooterProps) => {
         
 
         {/* Time Display on the Right */}
-        <div style={{ fontFamily: 'RawPixel' }} className="time_size sm:text-[28px] text-white leading-none font-bold tracking-widest bg-[#FFFFFF1A] px-4 py-3.5 rounded-lg">
+        <div className="rawpixel time_size sm:text-[28px] text-white font-bold bg-[#FFFFFF1A] px-4 py-3.5 rounded-lg">
           {currentTime}
         </div>
       </div>

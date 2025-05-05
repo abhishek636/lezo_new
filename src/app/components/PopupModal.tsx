@@ -21,7 +21,7 @@ const PopupModal = ({ content, onClose }: Props) => (
                 <div className=" rounded-lg">
                     <Image src={card.imageSrc} alt={card.title} width={107} height={107} />
                 </div>
-                <p className=" mt-2 text-white">{card.title}</p>
+                <p className=" mt-2 text-white rawpixel">{card.title}</p>
                 </a>
             ))}
             </div>

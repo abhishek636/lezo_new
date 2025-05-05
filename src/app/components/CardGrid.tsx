@@ -18,7 +18,7 @@ const CardGrid = ({ cards, onCardClick, hide }: CardGridProps) => (
         <Image src={card.imageSrc} alt={card.title} width={127} height={127} 
             className="w-20 h-20 md:w-32 md:h-32 lg:w-40 lg:h-40 " 
         />
-        <p className="sm:text-xl mt-3.5 text-white font-light">{card.title}</p>
+        <p className="sm:text-xl mt-3.5 text-white font-bold rawpixel" >{card.title}</p>
       </div>
     ))}
   </div>

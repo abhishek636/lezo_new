@@ -1,24 +1,5 @@
 @import "tailwindcss";
 
-@font-face {
-  font-family: 'RawPixel';
-  src: url('/RawPixel.woff2') format('woff2');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'RawPixelBold';
-  src: url('/RawPixel-Bold.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-/* Optional: apply it globally */
-body {
-  font-family: 'RawPixel';
-}
 
 @layer utilities {
   .gradient-border {
@@ -46,6 +27,12 @@ body {
 }
 .bg-custom-gradient {
   background: linear-gradient(115.95deg, rgba(239, 239, 239, 0.18) 10.92%, rgba(255, 255, 255, 0.024) 96.4%) !important;
+}
+
+.rawpixel{
+  font-family: var(--raw-pixel), sans-serif;
+  letter-spacing: 0.02em;
+  line-height: normal;
 }
 
 /* globals.css or your stylesheet */

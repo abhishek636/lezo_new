@@ -228,7 +228,7 @@ export default function DraggableModal() {
                       <input type="checkbox" className="form-checkbox mt-1" checked={checkbox2} onChange={(e) => setCheckbox2(e.target.checked)} />
                       <span className="text-white">I understand the app is in experimental mode and will only use it for testing at my own risk with not more than $100.</span>
                     </label>
-                    <button className={`px-8 py-2 rounded text-white ${isAcceptEnabled ? 'bg-[#000] hover:bg-gray-900' : 'bg-[#4C4C4C] cursor-not-allowed'}`} disabled={!isAcceptEnabled} onClick={() => setAccepted(true)}>Accept</button>
+                    <button className={`px-8 py-2 rounded text-white rawpixel ${isAcceptEnabled ? 'bg-[#000] hover:bg-gray-900' : 'bg-[#4C4C4C] cursor-not-allowed'}`} disabled={!isAcceptEnabled} onClick={() => setAccepted(true)}>Accept</button>
                   </div>
                   {showTermsPopup && (
                     <div className="fixed inset-0 bg-custom-gradient backdrop_custom z-50 flex items-center justify-center px-4">
