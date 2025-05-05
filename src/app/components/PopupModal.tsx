@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { PopupContent } from './types';
+import Link from 'next/link';
 
 interface Props {
   content: PopupContent;
@@ -20,12 +21,12 @@ const PopupModal = ({ content, onClose }: Props) => (
         {content.additionalCards && content.additionalCards.length > 0 ? (
           <div className="grid md:grid-cols-4 sm:grid-cols-5 grid-cols-3 sm:gap-4 gap-2 w-full">
             {content.additionalCards.map((card) => (
-              <a key={card.id} href={card.href} className="flex flex-col items-center justify-center w-full hover:scale-110 transition-transform">
+              <Link key={card.id} href={card.href} prefetch={true} className="flex flex-col items-center justify-center w-full hover:scale-110 transition-transform">
                 <div className="rounded-lg">
                   <Image src={card.imageSrc} alt={card.title} width={107} height={107} />
                 </div>
                 <p className="mt-2 text-lg text-[#CDDDDE] rawpixel font-bold uppercase">{card.title}</p>
-              </a>
+              </Link>
             ))}
           </div>
         ) : (
