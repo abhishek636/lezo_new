@@ -1,24 +1,25 @@
+// app/layout.tsx (App Router layout)
 import type { Metadata } from "next";
 import { Outfit } from "next/font/google";
 import localfont from "next/font/local";
 import "./globals.css";
+import SplashScreen from "./components/SplashScreen";
 
-// Import Outfit font
 const outfit = Outfit({
   subsets: ["latin"],
-  variable: "--font-outfit", // Custom variable name
-  display: "swap", // Optional: ensures better performance for font loading
+  variable: "--font-outfit",
+  display: "swap",
 });
 
 const RawPixel = localfont({
-  src:[
+  src: [
     {
-      path:'../../public/fonts/RawPixel.ttf',
-      weight:"400"
-    }
+      path: "../../public/fonts/RawPixel.ttf",
+      weight: "400",
+    },
   ],
-  variable:"--raw-pixel",
-})
+  variable: "--raw-pixel",
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -33,7 +34,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={outfit.variable}>
       <body className={`${outfit.variable} ${RawPixel.variable} antialiased`}>
-        {children}
+        <SplashScreen>
+          {children}
+        </SplashScreen>
       </body>
     </html>
   );
