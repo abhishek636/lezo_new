@@ -84,7 +84,7 @@ export default function DraggableModal() {
           const adjustedLeft = windowWidth <= 768 ? 0 : centerX;
  
           // Adjust top position based on screen size (for mobile)
-          const adjustedTop = windowWidth <= 768 ? window.innerHeight / 5 : centerY; // For mobile, set top to 1/4 of the screen height
+          const adjustedTop = windowWidth <= 768 ? window.innerHeight / 3.5 : centerY; // For mobile, set top to 1/4 of the screen height
  
           setPosition({ x: adjustedLeft, y: adjustedTop });
         }
@@ -167,7 +167,7 @@ export default function DraggableModal() {
          onTouchEnd={handleTouchEnd}>
         <div
           ref={modalRef}
-          className={`absolute rounded-lg border border-gray-400 backdrop_custom shadow-xl ${isMaximized ? 'top-0 left-0 w-full sm:h-[100vh] h-[calc(100vh-70px)] backdrop_custom bg-custom-gradient' : 'lg:w-[890px] w-full bg-custom-gradient'}`}
+          className={`absolute rounded-lg border border-gray-400 backdrop_custom shadow-xl ${isMaximized ? 'top-0 left-0 w-full sm:h-[100vh] h-full backdrop_custom bg-custom-gradient' : 'lg:w-[890px] w-full bg-custom-gradient'}`}
           style={!isMaximized && isClient? { left: position.x, top: position.y } : {}}
         >
           {/* Header */}
@@ -215,7 +215,7 @@ export default function DraggableModal() {
           {!isMinimized && (
             <div>
               {!accepted ? (
-                <div className="flex items-center justify-center flex-1 overflow-y-auto px-6 md:px-36 py-20 md:py-28">
+                <div className="flex items-center justify-center flex-1 overflow-y-scroll px-6 md:px-36 py-20 md:py-28">
                   <div className={`p-4 space-y-4 bg-custom-gradient rounded-lg transition-opacity duration-300 gradient-border ${
                     showTermsPopup ? 'opacity-0 pointer-events-none' : 'opacity-100'
                   }`}>
@@ -310,7 +310,7 @@ export default function DraggableModal() {
 
                 </div>
               ) : (
-                <div className="sm:py-7 sm:px-16  p-4 flex flex-col min-h-[500px] h-full sm:p-4 p-2 rounded-b-lg text-[#4C4C4C] space-y-4 overflow-hidden">
+                <div className="sm:py-7 sm:px-16  p-4 flex flex-col sm:min-h-[500px] min-h-[400px] h-full sm:p-4 p-2 rounded-b-lg text-[#4C4C4C] space-y-4 overflow-hidden">
                   <div className='relative flex gap-2 justify-center items-center mb-6 flex-wrap'>
                      {messages.length > 0 && (
                           <div className="sm:absolute  right-0 flex gap-2 order-2">
@@ -358,7 +358,7 @@ export default function DraggableModal() {
                       
                     </div>
                   </div>
-                  <div className=" sm:flex-1 overflow-y-auto p-2 rounded sm:mb-4 mb-0">
+                  <div className={` p-2 rounded sm:mb-4 mb-0  ${!isMaximized ? 'sm:max-h-[300px] max-h-[calc(400px-160px)] overflow-y-scroll':'test_height'}`}>
                     {messages.length === 0 && (
                        <div className="rounded-lg text-center text-[#4C4C4C] space-y-6">
                    
@@ -444,7 +444,7 @@ export default function DraggableModal() {
                   </div>
  
                   {!showChatHistory && (
-                    <div className='absolute sm:px-auto px-3 bottom-10 left-0 right-0'>
+                    <div className='absolute sm:px-auto px-3 sm:bottom-10 bottom-3 left-0 right-0'>
                       <div className="relative w-full max-w-[744px] mx-auto">
                         <input
                           type="text"
@@ -452,10 +452,10 @@ export default function DraggableModal() {
                           onChange={(e) => setInputValue(e.target.value)}
                           onKeyDown={handleKeyDown}
                           placeholder="Bridge with Defy Agent.."
-                          className="w-full rounded-lg bg-custom-gradient px-4 py-5 pr-12 text-white placeholder-white/70 focus:outline-none"
+                          className="w-full rounded-lg bg-custom-gradient px-4 sm:py-5 py-3 pr-12 text-white placeholder-white/70 focus:outline-none"
                         />
-                        <button type="submit" onClick={handleSendMessage} className="absolute top-1/2 right-2 -translate-y-1/2 bg-white/10 p-4 rounded-lg hover:bg-white/20 transition">
-                          <Image src="/rocket.png" alt="send" width={20} height={20} />
+                        <button type="submit" onClick={handleSendMessage} className="absolute top-1/2 right-2 -translate-y-1/2 bg-white/10 sm:p-4 p-2 rounded-lg hover:bg-white/20 transition">
+                          <Image src="/rocket.png" alt="send" width={20} height={20} className='sm:w-full sm:h-full w-4 h-4'/>
                         </button>
                       </div>
                     </div>
