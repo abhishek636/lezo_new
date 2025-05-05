@@ -22,7 +22,7 @@
       "title": "Partners",
       "imageSrc": "/framer.svg",
       "popupContent": {
-        "additionalCardsFile": "/additionalcardsfiles/daoAdditionalCards.json"
+        "additionalCardsFile": "/additionalcardsfiles/partners.json"
       }
   },
   {

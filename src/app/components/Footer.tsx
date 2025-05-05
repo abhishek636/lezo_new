@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 
 type FooterProps = {
   hideSection?: boolean;
@@ -59,19 +60,19 @@ const Footer = ({ hideSection, onClick }: FooterProps) => {
       >
         {/* Social Icons on the Left */}
         <div className="flex gap-2">
-          <a target="_blank" href="#">
+          <Link target="_blank" href="#">
             <Image src="/x.svg" alt="Twitter" width={54} height={54} />
-          </a>
-          <a target="_blank" href="#">
+          </Link>
+          <Link target="_blank" href="#">
             <Image src="/telegram.svg" alt="Telegram" width={54} height={54} />
-          </a>
-          <a href="/">
+          </Link>
+          <Link href="/">
             <Image src="/home.svg" alt="Home" width={54} height={54} />
-          </a>
+          </Link>
           {/* Restore Button */}
         {isModalMinimized && (
           <button onClick={handleRestore}>
-            <Image src="/defy.svg" alt="defy" width={54} height={54} />
+            <Image src="/bridgy.svg" alt="defy" width={54} height={54} />
           </button>
         )}
         </div>
