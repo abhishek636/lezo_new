@@ -10,8 +10,13 @@ const BackgroundVideo = () => (
   ></video>
 
   <img
-    className="absolute top-0 left-0 w-full h-full object-cover opacity-100 scale-125" 
+    className="absolute top-0 left-0 w-full h-full object-cover opacity-100 scale-125 sm:block none" 
     src="/video_overlay.svg" 
+    alt="Overlay"
+  />
+  <img
+    className="absolute top-0 left-0 w-full h-full object-cover opacity-100 scale-125 block sm:none" 
+    src="/mobile_ovr.svg" 
     alt="Overlay"
   />
 </div>

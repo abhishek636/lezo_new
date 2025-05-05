@@ -362,7 +362,7 @@ export default function DraggableModal() {
                       
                     </div>
                   </div>
-                  <div className={` p-2 rounded sm:mb-4 mb-0  ${!isMaximized ? 'sm:max-h-[300px] max-h-[calc(400px-160px)] overflow-y-scroll':'test_height'}`}>
+                  <div className={` p-2 rounded sm:mb-4 mb-0  ${!isMaximized ? 'sm:max-h-[300px] max-h-[calc(400px-100px)] overflow-y-scroll':'test_height'}`}>
                     {messages.length === 0 && (
                        <div className="rounded-lg text-center text-[#4C4C4C] space-y-6">
                    
