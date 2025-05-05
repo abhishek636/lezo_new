@@ -128,7 +128,7 @@ html, body {
 }
 
 @keyframes pulse {
-  0% { opacity: 0.95; }
+  0% { opacity: 0.7; }
   50% { opacity: 1; }
-  100% { opacity: 0.95; }
+  100% { opacity: 0.7; }
 }
