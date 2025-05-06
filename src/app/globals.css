@@ -132,3 +132,8 @@ html, body {
   50% { opacity: 1; }
   100% { opacity: 0.7; }
 }
+body{
+  background: url('../../public/background-os.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
