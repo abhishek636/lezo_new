@@ -304,7 +304,7 @@ export default function DraggableModal() {
 
                 </div>
               ) : (
-                <div className="sm:py-7 sm:px-auto  p-4 flex flex-col sm:min-h-[500px] min-h-[400px] h-full sm:p-4 p-2 rounded-b-lg text-[#4C4C4C] space-y-4 overflow-hidden">
+                <div className="sm:py-7 sm:px-auto  p-4 flex flex-col justify-center sm:min-h-[500px] min-h-[400px] h-full sm:p-4 p-2 rounded-b-lg text-[#4C4C4C] space-y-4 overflow-hidden">
                   <div className='relative flex gap-2 justify-center items-center sm:mb-6 mb-4 flex-wrap'>
                      {messages.length > 0 && (
                           <div className="sm:absolute  right-0 flex gap-2 order-2">
@@ -356,14 +356,14 @@ export default function DraggableModal() {
                     {messages.length === 0 && ( 
                        <div className="rounded-lg text-center text-[#4C4C4C] space-y-6 max-w-[720px] mx-auto">
                    
-                          <h2 className="sm:text-[40px] text-2xl leading-none  text-white  sm:mb-2 mb-0">
+                          <h2 className="sm:text-[40px] text-xl leading-none  text-white  sm:mb-2 mb-0">
                             Where do you want to Bridge today?
                           </h2>
-                          <p className=" text-white  sm:mb-6 mb-4 sm:mt-4 mt-2">Choose from various Bridging options.</p>
+                          <p className=" text-white  sm:mb-6 mb-4 sm:text-base text-sm sm:mt-4 mt-2">Choose from various Bridging options.</p>
                           {messages.length === 0 && (
                       <div className="rounded-lg text-center text-[#4C4C4C] space-y-6 mb-4">
                         
-                        <div className="grid grid-cols-2 sm:grid-cols-3 sm:gap-5 gap-3  mx-auto max-w-[613px] ">
+                        <div className="sm:grid grid-cols-2 sm:grid-cols-3 sm:gap-5 gap-3  mx-auto max-w-[613px] hidden">
                           <div className="flex items-center justify-center bg-custom-gradient backdrop_custom rounded-xl sm:px-8 sm:py-[15px] p-3 gradient-border">
                             <Image src="/grid1.1.svg" alt="From Token" width={51} height={24} className="object-contain" />
                             <Image src="/right arrow.svg" alt='right arrow.svg' width={20} height={22} />
@@ -400,7 +400,38 @@ export default function DraggableModal() {
                             <Image src="/grid1.1.svg" alt="To Token" width={51} height={24} className="object-contain" />
                           </div>
                         </div>
-
+                        <div className="grid grid-cols-2 sm:grid-cols-3 sm:gap-5 gap-3  mx-auto max-w-[613px] sm:hidden">
+                          <div className="flex items-center justify-center bg-custom-gradient backdrop_custom rounded-xl sm:px-8 sm:py-[15px] p-3 gradient-border">
+                            <Image src="/grid1.1.svg" alt="From Token" width={51} height={24} className="object-contain" />
+                            <Image src="/right arrow.svg" alt='right arrow.svg' width={20} height={22} />
+                            <Image src="/grid1.2.svg" alt="To Token" width={51} height={24} className="object-contain" />
+                          </div>
+                          <div className="flex items-center justify-center bg-custom-gradient backdrop_custom rounded-xl sm:px-8 sm:py-[15px] p-3 gradient-border">
+                            <Image src="/grid2.2.svg" alt="From Token" width={99} height={24} className="object-contain sm:w-auto w-[60%]" />
+                            <Image src="/right arrow.svg" alt='right arrow.svg' width={20} height={22} />
+                            <Image src="/grid1.1.svg" alt="To Token" width={51} height={24} className="object-contain " />
+                          </div>
+                          <div className="flex items-center justify-center bg-custom-gradient backdrop_custom rounded-xl sm:px-8 sm:py-[15px] p-3 gradient-border">
+                            <Image src="/grid1.1.svg" alt="From Token" width={51} height={24} className="object-contain" />
+                            <Image src="/right arrow.svg" alt='right arrow.svg' width={20} height={22} />
+                            <Image src="/grid3.2.svg" alt="To Token" width={51} height={24} className="object-contain" />
+                          </div>                          
+                          <div className="flex items-center justify-center bg-custom-gradient backdrop_custom rounded-xl sm:px-8 sm:py-[15px] p-3 gradient-border">
+                            <Image src="/grid1.2.svg" alt="From Token" width={51} height={24} className="object-contain" />
+                            <Image src="/right arrow.svg" alt='right arrow.svg' width={20} height={22} />
+                            <Image src="/grid1.1.svg" alt="To Token" width={51} height={24} className="object-contain" />
+                          </div>
+                          <div className="flex items-center justify-center bg-custom-gradient backdrop_custom rounded-xl sm:px-8 sm:py-[15px] p-3 gradient-border">
+                            <Image src="/grid1.1.svg" alt="From Token" width={51} height={24} className="object-contain" />
+                            <Image src="/right arrow.svg" alt='right arrow.svg' width={20} height={22} />
+                            <Image src="/grid2.2.svg" alt="To Token" width={99} height={24} className="object-contain sm:w-auto w-[60%]" />
+                          </div>
+                          <div className="flex items-center justify-center bg-custom-gradient backdrop_custom rounded-xl sm:px-8 sm:py-[15px] p-3 gradient-border">
+                            <Image src="/grid3.2.svg" alt="From Token" width={51} height={24} className="object-contain" />
+                            <Image src="/right arrow.svg" alt='right arrow.svg' width={20} height={22} />
+                            <Image src="/grid1.1.svg" alt="To Token" width={51} height={24} className="object-contain" />
+                          </div>
+                        </div>
                       </div>
                     )}
                         </div>
