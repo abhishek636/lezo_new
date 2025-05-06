@@ -4,11 +4,7 @@ import { useRef, useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import '../globals.css';
-import Link from 'next/link';
 import Footer from '../components/Footer';
-import MarqueeBanner from '../components/MarqueeBanner';
-import Logo from '../components/Logo';
-import BackgroundVideo from '../components/BackgroundVideo';
  
 type Message = { role: 'user' | 'bot'; text: string };
  
@@ -158,10 +154,6 @@ export default function DraggableModal() {
  
   return (
     <div className="relative w-screen sm:h-[100vh] h-full overflow-hidden">
-      <BackgroundVideo />
-      <MarqueeBanner text={marqueeText}/>
-      <Logo/>
- 
       {/* Modal */}
       <div className=" fixed custom-marrggin-a inset-0 z-30 flex justify-center sm:items-center items-end sm:w-auto mx-auto overflow-hidden" onMouseMove={handleMouseMove} onMouseUp={handleMouseUp} onTouchMove={handleTouchMove}
          onTouchEnd={handleTouchEnd}>

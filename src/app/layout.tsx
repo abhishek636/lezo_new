@@ -1,9 +1,12 @@
-// app/layout.tsx (App Router layout)
+// app/layout.tsx
 import type { Metadata } from "next";
 import { Outfit } from "next/font/google";
 import localfont from "next/font/local";
 import "./globals.css";
 import SplashScreen from "./components/SplashScreen";
+import BackgroundVideo from "./components/BackgroundVideo"; 
+import Logo from "./components/Logo";
+import MarqueeBanner from "./components/MarqueeBanner";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -31,12 +34,19 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+   const marqueeText = "OPERATING SYSTEM FOR AI AGENTS";
   return (
     <html lang="en" className={outfit.variable}>
-      <body className={`${outfit.variable} ${RawPixel.variable} antialiased`}>
+      <body className={`${outfit.variable} ${RawPixel.variable} antialiased bg-[#0a0a0a] relative w-screen h-screen overflow-hidden`}>
+        <BackgroundVideo /> 
+        <MarqueeBanner text={marqueeText} />
+        <Logo />
         <SplashScreen>
-          {children}
+        {children}
+
         </SplashScreen>
+          
+        
       </body>
     </html>
   );

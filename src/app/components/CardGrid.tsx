@@ -8,7 +8,8 @@ interface CardGridProps {
 }
 
 const CardGrid = ({ cards, onCardClick, hide }: CardGridProps) => (
-  <div className={`absolute xl:bottom-34 sm:bottom-56 bottom-25 w-full flex  justify-center sm:gap-5 gap-3 transition-all duration-500 ${hide ? 'opacity-0 translate-y-10 pointer-events-none' : 'opacity-100 translate-y-0'}`}>
+  <div className={`absolute xl:bottom-34 sm:bottom-56 bottom-25 w-full flex justify-center sm:gap-5 gap-3 transition-all duration-500 ease-in-out ${hide ? 'pointer-events-none animate-fade-out-down' : 'animate-fade-in-up'}`}>
+
     {cards.map((card) => (
       <div
         key={card.id}

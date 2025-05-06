@@ -1,11 +1,8 @@
 'use client';
 
 import { useState, useEffect } from "react";
-import MarqueeBanner from "./components/MarqueeBanner";
-import Logo from "./components/Logo";
 import CardGrid from "./components/CardGrid";
 import PopupModal from "./components/PopupModal";
-import BackgroundVideo from "./components/BackgroundVideo";
 import Footer from "./components/Footer";
 import { Card, PopupContent, AdditionalCard } from "./components/types";
 
@@ -14,8 +11,6 @@ export default function Home() {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [popupContent, setPopupContent] = useState<PopupContent | null>(null);
   const [menuOpen, setMenuOpen] = useState(false);
-
-  const marqueeText = "OPERATING SYSTEM FOR AI AGENTS";
 
   useEffect(() => {
     fetch('/cardsData.json')
@@ -50,11 +45,10 @@ export default function Home() {
   };
 
   return (
-    <div className="relative w-screen h-full overflow-hidden">
-      <BackgroundVideo />
+    <div className="relative ">
+      
       <div className="relative w-screen sm:h-[100vh] h-full overflow-hidden">
-        <MarqueeBanner text={marqueeText} />
-        <Logo />
+        
         <CardGrid cards={cardsData} onCardClick={openPopup} hide={isPopupOpen} />
         {isPopupOpen && popupContent && (
           <PopupModal content={popupContent} onClose={closePopup} />
