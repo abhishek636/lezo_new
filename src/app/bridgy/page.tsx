@@ -304,7 +304,7 @@ export default function DraggableModal() {
 
                 </div>
               ) : (
-                <div className="sm:py-7 sm:px-auto  p-4 flex flex-col justify-center sm:min-h-[500px] min-h-[400px] h-full sm:p-4 p-2 rounded-b-lg text-[#4C4C4C] space-y-4 overflow-hidden">
+                <div className="sm:py-10 sm:px-auto   flex flex-col sm:min-h-[500px] min-h-[400px] h-full sm:p-4  px-4 pb-4 pt-10  rounded-b-lg text-[#4C4C4C] space-y-4 overflow-auto">
                   <div className='relative flex gap-2 justify-center items-center sm:mb-6 mb-4 flex-wrap'>
                      {messages.length > 0 && (
                           <div className="sm:absolute  right-0 flex gap-2 order-2">
