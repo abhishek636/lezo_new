@@ -27,12 +27,12 @@ const CardGrid = ({ cards, onCardClick, hide }: CardGridProps) => {
               onClick={() => onCardClick(card)}
             >
               <img
-  src={card.imageSrc}
-  alt={card.title}
-  width={127}
-  height={127}
-  className="w-20 h-20 md:w-32 lg:w-full lg:h-full backdrop_custom rounded-3xl"
-/>
+                  src={card.imageSrc}
+                  alt={card.title}
+                  width={127}
+                  height={127}
+                  className="w-20 h-20 md:w-32 lg:w-full lg:h-full"
+                />
               <p className="sm:text-xl mt-3.5 text-[#CDDDDE] font-bold uppercase rawpixel">
                 {card.title}
               </p>
