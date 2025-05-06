@@ -32,23 +32,18 @@ const Footer = ({ hideSection, onClick }: FooterProps) => {
   useEffect(() => {
     const now = new Date();
     let hours = now.getHours();
-    let minutes = now.getMinutes();
-  
-    // Convert hours to 12-hour format
-    if (hours > 12) {
+    const minutes = now.getMinutes();
+
+    if (hours === 0) {
+      hours = 12;
+    } else if (hours > 12) {
       hours = hours - 12;
     }
   
-    // Ensure minutes remains a number and is formatted with a leading zero if necessary
-    if (minutes < 10) {
-      minutes = Number(`0${minutes}`); // Ensure minutes is a number
-    }
+    const formattedHours = String(hours).padStart(2, '0');
+    const formattedMinutes = String(minutes).padStart(2, '0');
   
-    // Combine hours and minutes in 12-hour format
-    const time = `${hours}:${minutes}`;
-  
-    // Set the formatted time as a string
-    setCurrentTime(time); // Ensure currentTime is a string
+    setCurrentTime(`${formattedHours}:${formattedMinutes}`);
   }, []);
 
   return (
