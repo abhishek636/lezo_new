@@ -305,7 +305,7 @@ export default function DraggableModal() {
                 </div>
               ) : (
                 <div className="sm:py-7 sm:px-16  p-4 flex flex-col sm:min-h-[500px] min-h-[400px] h-full sm:p-4 p-2 rounded-b-lg text-[#4C4C4C] space-y-4 overflow-hidden">
-                  <div className='relative flex gap-2 justify-center items-center sm:mb-6 mb-3 flex-wrap'>
+                  <div className='relative flex gap-2 justify-center items-center sm:mb-6 mb-4 flex-wrap'>
                      {messages.length > 0 && (
                           <div className="sm:absolute  right-0 flex gap-2 order-2">
                             <button>
@@ -356,7 +356,7 @@ export default function DraggableModal() {
                     {messages.length === 0 && (
                        <div className="rounded-lg text-center text-[#4C4C4C] space-y-6">
                    
-                          <h2 className="sm:text-[40px] text-[20px] leading-none font-bold text-white  sm:mb-2 mb-0">
+                          <h2 className="sm:text-[40px] text-2xl leading-none font-[500] text-white  sm:mb-2 mb-2">
                             Where do you want to Bridge today?
                           </h2>
                           <p className=" text-white sm:mb-auto mb-3">Choose from various Bridging options.</p>
