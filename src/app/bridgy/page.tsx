@@ -159,7 +159,7 @@ export default function DraggableModal() {
           ref={modalRef}
           className={`absolute rounded-lg border border-gray-400 backdrop_custom shadow-xl ${
             isMaximized
-              ? 'top-0 left-0 w-full sm:h-[100vh] h-full backdrop_custom bg-custom-gradient'
+              ? 'top-0 left-0 w-full  sm:h-[100vh] h-full backdrop_custom bg-custom-gradient'
               : 'lg:w-[890px] w-full bg-custom-gradient sm:min-h-auto min-h-[420px]'
           }`}
           style={!isMaximized && isClient? { left: position.x, top: position.y } : {}}
@@ -209,7 +209,7 @@ export default function DraggableModal() {
           {!isMinimized && (
             <div>
               {!accepted ? (
-                <div className="flex items-center justify-center flex-1 overflow-y-auto px-6 md:px-36 py-12 md:py-28">
+                <div className="flex items-center justify-center flex-1 overflow-y-auto px-6 md:px-36 py-12 md:py-28 ">
                   <div className={`p-4 space-y-4 bg-custom-gradient rounded-lg transition-opacity duration-300 gradient-border ${
                     showTermsPopup ? 'opacity-0 pointer-events-none' : 'opacity-100'
                   }`}>
@@ -228,7 +228,7 @@ export default function DraggableModal() {
                       <input type="checkbox" className="form-checkbox mt-1" checked={checkbox2} onChange={(e) => setCheckbox2(e.target.checked)} />
                       <span className="text-white">I understand the app is in experimental mode and will only use it for testing at my own risk with not more than $100.</span>
                     </label>
-                    <button className={`px-8 py-2.5 uppercase rounded text-white rawpixel  ${isAcceptEnabled ? 'bg-[#000] hover:bg-gray-900' : 'bg-[#4C4C4C] cursor-not-allowed'}`} disabled={!isAcceptEnabled} onClick={() => setAccepted(true)}>Accept</button>
+                    <button className={`px-8 py-2.5 uppercase rounded text-white rawpixel  ${isAcceptEnabled ? 'bg-[#000] hover:bg-gray-900' : 'bg-[#000] cursor-not-allowed'}`} disabled={!isAcceptEnabled} onClick={() => setAccepted(true)}>Accept</button>
                   </div>
                   {showTermsPopup && (
                     <div className="fixed inset-0 bg-custom-gradient backdrop_custom z-50 flex items-center justify-center px-4">
@@ -325,7 +325,7 @@ export default function DraggableModal() {
                         {/* Wallet Info */}
                         <div
                           onClick={() => isMobile && setDropdownOpen((prev) => !prev)}
-                          className="relative inline-flex gap-2.5 items-center bg-custom-gradient backdrop_custom rounded-xl p-2 px-2.5 text-[#fff] cursor-pointer"
+                          className="relative inline-flex gap-2.5 gradient-border items-center bg-custom-gradient backdrop_custom rounded-xl p-2 px-2.5 text-[#fff] cursor-pointer"
                         >
                           <Image src="/vaulate.svg" alt="Logo" width={20} height={20} />
                           EFWvSq...v27Q9g
@@ -333,8 +333,8 @@ export default function DraggableModal() {
                             <Image src="/right_arrow.svg" alt="Arrow" width={16} height={16} />
                           </div>
                           {isDropdownOpen && (
-                              <div className="absolute top-10 left-0 right-0 bg-[#677573] backdrop-blur-[76px] rounded-lg shadow-lg z-20">
-                                <ul className="text-left text-sm text-white">
+                              <div className="absolute top-10 left-0 right-0 bg-[#677573] backdrop-blur-[76px] rounded-lg shadow-lg z-20 ">
+                                <ul className="text-left text-sm text-white ">
                                   <li className="px-4 py-2 rounded-t-md hover:bg-[#000] hover:text-white cursor-pointer flex sm:gap-2 justify-between items-center">
                                     EFWVsq...v27Q9g <p className="text-xs">(Linked wallet)</p>
                                   </li>
@@ -353,48 +353,48 @@ export default function DraggableModal() {
                     </div>
                   </div>
                   <div className={` p-2 rounded sm:mb-4 mb-0  ${!isMaximized ? 'sm:max-h-[300px] max-h-[calc(400px-100px)] overflow-y-auto':'test_height'}`}>
-                    {messages.length === 0 && (
-                       <div className="rounded-lg text-center text-[#4C4C4C] space-y-6">
+                    {messages.length === 0 && ( 
+                       <div className="rounded-lg text-center text-[#4C4C4C] space-y-6 max-w-[720px] mx-auto">
                    
-                          <h2 className="sm:text-[40px] text-2xl leading-none font-[500] text-white  sm:mb-2 mb-2">
+                          <h2 className="sm:text-[40px] text-2xl leading-none  text-white  sm:mb-2 mb-0">
                             Where do you want to Bridge today?
                           </h2>
-                          <p className=" text-white sm:mb-auto mb-3">Choose from various Bridging options.</p>
+                          <p className=" text-white  sm:mb-6 mb-4 sm:mt-4 mt-2">Choose from various Bridging options.</p>
                           {messages.length === 0 && (
                       <div className="rounded-lg text-center text-[#4C4C4C] space-y-6 mb-4">
                         
-                        <div className="grid grid-cols-2 sm:grid-cols-3 sm:gap-4 gap-3  max-w-[744px] mx-auto">
-                          <div className="flex items-center justify-center bg-custom-gradient backdrop_custom rounded-lg sm:px-8 sm:py-4 p-3">
+                        <div className="grid grid-cols-2 sm:grid-cols-3 sm:gap-5 gap-3  mx-auto max-w-[600px] ">
+                          <div className="flex items-center justify-center bg-custom-gradient backdrop_custom rounded-lg sm:px-8 sm:py-4 p-3 gradient-border">
                             <Image src="/grid1.1.svg" alt="From Token" width={51} height={24} className="object-contain" />
                             <Image src="/right arrow.svg" alt='right arrow.svg' width={20} height={20} />
                             <Image src="/grid1.2.svg" alt="To Token" width={51} height={24} className="object-contain" />
                           </div>
 
-                          <div className="flex items-center justify-center bg-custom-gradient backdrop_custom rounded-lg sm:px-8 sm:py-4 p-3">
+                          <div className="flex items-center justify-center bg-custom-gradient backdrop_custom rounded-lg sm:px-8 sm:py-4 p-3 gradient-border">
                             <Image src="/grid1.1.svg" alt="From Token" width={51} height={24} className="object-contain" />
                             <Image src="/right arrow.svg" alt='right arrow.svg' width={20} height={20} />
                             <Image src="/grid2.2.svg" alt="To Token" width={99} height={24} className="object-contain sm:w-auto w-[60%]" />
                           </div>
 
-                          <div className="flex items-center justify-center bg-custom-gradient backdrop_custom rounded-lg sm:px-8 sm:py-4 p-3">
+                          <div className="flex items-center justify-center bg-custom-gradient backdrop_custom rounded-lg sm:px-8 sm:py-4 p-3 gradient-border">
                             <Image src="/grid1.1.svg" alt="From Token" width={51} height={24} className="object-contain" />
                             <Image src="/right arrow.svg" alt='right arrow.svg' width={20} height={20} />
                             <Image src="/grid3.2.svg" alt="To Token" width={51} height={24} className="object-contain" />
                           </div>
 
-                          <div className="flex items-center justify-center bg-custom-gradient backdrop_custom rounded-lg sm:px-8 sm:py-4 p-3">
+                          <div className="flex items-center justify-center bg-custom-gradient backdrop_custom rounded-lg sm:px-8 sm:py-4 p-3 gradient-border">
                             <Image src="/grid1.2.svg" alt="From Token" width={51} height={24} className="object-contain" />
                             <Image src="/right arrow.svg" alt='right arrow.svg' width={20} height={20} />
                             <Image src="/grid1.1.svg" alt="To Token" width={51} height={24} className="object-contain" />
                           </div>
 
-                          <div className="flex items-center justify-center bg-custom-gradient backdrop_custom rounded-lg sm:px-8 sm:py-4 p-3">
+                          <div className="flex items-center justify-center bg-custom-gradient backdrop_custom rounded-lg sm:px-8 sm:py-4 p-3 gradient-border">
                             <Image src="/grid2.2.svg" alt="From Token" width={99} height={24} className="object-contain sm:w-auto w-[60%]" />
                             <Image src="/right arrow.svg" alt='right arrow.svg' width={20} height={20} />
                             <Image src="/grid1.1.svg" alt="To Token" width={51} height={24} className="object-contain " />
                           </div>
 
-                          <div className="flex items-center justify-center bg-custom-gradient backdrop_custom rounded-lg sm:px-8 sm:py-4 p-3">
+                          <div className="flex items-center justify-center bg-custom-gradient backdrop_custom rounded-lg sm:px-8 sm:py-4 p-3 gradient-border">
                             <Image src="/grid3.2.svg" alt="From Token" width={51} height={24} className="object-contain" />
                             <Image src="/right arrow.svg" alt='right arrow.svg' width={20} height={20} />
                             <Image src="/grid1.1.svg" alt="To Token" width={51} height={24} className="object-contain" />
@@ -407,7 +407,7 @@ export default function DraggableModal() {
                     )}
                     
                     {!showChatHistory && messages.map((msg, idx) => (
-                      <div key={idx} className={`flex items-start mb-4 ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}>
+                      <div key={idx} className={`flex items-start mb-4 max-w-[600px] mx-auto ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}>
                         {msg.role !== 'user' && (
                           <div className="w-6 h-6 bg-[#E4EAD8] text-[#4C4C4C] rounded-md flex items-center justify-center text-xs font-semibold mr-2">
                             B
@@ -439,7 +439,7 @@ export default function DraggableModal() {
  
                   {!showChatHistory && (
                     <div className='absolute sm:px-auto px-3 sm:bottom-10 bottom-3 left-0 right-0'>
-                      <div className="relative w-full max-w-[744px] mx-auto">
+                      <div className="relative w-full max-w-[600px] mx-auto">
                         <input
                           type="text"
                           value={inputValue}
