@@ -45,7 +45,7 @@ export default function Home() {
   };
 
   return (
-    <div className="relative ">
+    <div className="relative w-screen sm:h-[100vh] h-full overflow-hidden">
       
       <div className="relative w-screen sm:h-[100vh] h-full overflow-hidden">
         
