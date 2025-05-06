@@ -446,7 +446,7 @@ export default function DraggableModal() {
                           onChange={(e) => setInputValue(e.target.value)}
                           onKeyDown={handleKeyDown}
                           placeholder="Bridge with Defy Agent.."
-                          className="w-full rounded-lg bg-custom-gradient px-4 sm:py-5 py-3 pr-12 text-white placeholder-white/70 focus:outline-none"
+                          className="w-full gradient-border rounded-lg bg-custom-gradient px-4 sm:py-5 py-3 pr-12 text-white placeholder-white/70 focus:outline-none"
                         />
                         <button type="submit" onClick={handleSendMessage} className="absolute top-1/2 right-2 -translate-y-1/2 bg-white/10 sm:p-4 p-2 rounded-lg hover:bg-white/20 transition">
                           <Image src="/rocket.png" alt="send" width={20} height={20} className='sm:w-full sm:h-full w-4 h-4'/>
