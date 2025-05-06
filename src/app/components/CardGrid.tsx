@@ -1,28 +1,47 @@
 import Image from 'next/image';
 import { Card } from './types';
+import { motion, AnimatePresence } from 'framer-motion';
 
 interface CardGridProps {
   cards: Card[];
   onCardClick: (card: Card) => void;
-  hide: boolean; // renamed for clarity
+  hide: boolean;
 }
 
-const CardGrid = ({ cards, onCardClick, hide }: CardGridProps) => (
-  <div className={`absolute xl:bottom-34 sm:bottom-56 bottom-25 w-full flex justify-center sm:gap-5 gap-3 transition-all duration-500 ease-in-out ${hide ? 'pointer-events-none animate-fade-out-down' : 'animate-fade-in-up'}`}>
-
-    {cards.map((card) => (
-      <div
-        key={card.id}
-        className="flex flex-col items-center  hover:scale-110 transition-transform cursor-pointer "
-        onClick={() => onCardClick(card)}
-      >
-        <Image src={card.imageSrc} alt={card.title} width={127} height={127} 
-          className="w-20 h-20 md:w-32 lg:w-full lg:h-full backdrop_custom rounded-3xl" 
-        />
-        <p className="sm:text-xl mt-3.5 text-[#CDDDDE] font-bold uppercase rawpixel" >{card.title}</p>
-      </div>
-    ))}
-  </div>
-);
+const CardGrid = ({ cards, onCardClick, hide }: CardGridProps) => {
+  return (
+    <AnimatePresence>
+      {!hide && (
+        <motion.div
+          key="card-grid"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 50 }}
+          transition={{ duration: 0.6, ease: 'easeInOut' }}
+          className="absolute xl:bottom-34 sm:bottom-56 bottom-25 w-full flex justify-center sm:gap-5 gap-3 pointer-events-auto"
+        >
+          {cards.map((card) => (
+            <div
+              key={card.id}
+              className="flex flex-col items-center hover:scale-110 transition-transform cursor-pointer"
+              onClick={() => onCardClick(card)}
+            >
+              <Image
+                src={card.imageSrc}
+                alt={card.title}
+                width={127}
+                height={127}
+                className="w-20 h-20 md:w-32 lg:w-full lg:h-full backdrop_custom rounded-3xl"
+              />
+              <p className="sm:text-xl mt-3.5 text-[#CDDDDE] font-bold uppercase rawpixel">
+                {card.title}
+              </p>
+            </div>
+          ))}
+        </motion.div>
+      )}
+    </AnimatePresence>
+  );
+};
 
 export default CardGrid;

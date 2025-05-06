@@ -49,7 +49,7 @@ export default function Home() {
       
       <div className="relative w-screen sm:h-[100vh] h-full overflow-hidden">
         
-        <CardGrid cards={cardsData} onCardClick={openPopup} hide={isPopupOpen} />
+      <CardGrid cards={cardsData} onCardClick={openPopup} hide={isPopupOpen} />
         {isPopupOpen && popupContent && (
           <PopupModal content={popupContent} onClose={closePopup} />
         )}

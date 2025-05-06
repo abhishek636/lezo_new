@@ -9,7 +9,7 @@ interface Props {
 
 const PopupModal = ({ content, onClose }: Props) => (
   <div className="fixed top-1/4 left-1 right-0 flex items-center justify-center z-50">
-    <div className="relative bg-white/10 backdrop-blur-2xl border border-white/20 px-3 rounded-2xl w-[597px] h-[calc(60vh-80px)] flex flex-col overflow-hidden pb-[8vh]">
+    <div className="relative bg-white/10 backdrop-blur-2xl gradient-border rounded-xl px-3 w-[597px] h-[calc(60vh-80px)] flex flex-col overflow-hidden pb-[8vh]">
       
       {/* Heading */}
       <div className="text-center rawpixel uppercase sm:text-[34px] text-lg text-[#CDDDDE] font-bold sm:pt-5 sm:pb-3 px-4 py-3">
