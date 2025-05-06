@@ -37,7 +37,7 @@ export default function RootLayout({
    const marqueeText = "OPERATING SYSTEM FOR AI AGENTS";
   return (
     <html lang="en" className={outfit.variable}>
-      <body className={`${outfit.variable} ${RawPixel.variable} antialiased bg-[#0a0a0a] relative w-screen sm:h-screen h-[100vh] overflow-hidden`}>
+      <body className={`${outfit.variable} ${RawPixel.variable} antialiased bg-[#0a0a0a] relative w-screen sm:h-screen h-full overflow-hidden`}>
         <BackgroundVideo /> 
         <MarqueeBanner text={marqueeText} />
         <Logo />
