@@ -363,7 +363,7 @@ export default function DraggableModal() {
                           {messages.length === 0 && (
                       <div className="rounded-lg text-center text-[#4C4C4C] space-y-6 mb-4">
                         
-                        <div className="grid grid-cols-2 sm:grid-cols-3 sm:gap-5 gap-3  mx-auto max-w-[600px] ">
+                        <div className="grid grid-cols-2 sm:grid-cols-3 sm:gap-5 gap-3  mx-auto max-w-[613px] ">
                           <div className="flex items-center justify-center bg-custom-gradient backdrop_custom rounded-lg sm:px-8 sm:py-4 p-3 gradient-border">
                             <Image src="/grid1.1.svg" alt="From Token" width={51} height={24} className="object-contain" />
                             <Image src="/right arrow.svg" alt='right arrow.svg' width={20} height={20} />
@@ -407,7 +407,7 @@ export default function DraggableModal() {
                     )}
                     
                     {!showChatHistory && messages.map((msg, idx) => (
-                      <div key={idx} className={`flex items-start mb-4 max-w-[600px] mx-auto ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}>
+                      <div key={idx} className={`flex items-start mb-4 max-w-[606px] mx-auto ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}>
                         {msg.role !== 'user' && (
                           <div className="w-6 h-6 bg-[#E4EAD8] text-[#4C4C4C] rounded-md flex items-center justify-center text-xs font-semibold mr-2">
                             B
