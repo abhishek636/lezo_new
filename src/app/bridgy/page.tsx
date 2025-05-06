@@ -160,7 +160,7 @@ export default function DraggableModal() {
           className={`absolute rounded-lg border border-gray-400 backdrop_custom shadow-xl ${
             isMaximized
               ? 'top-0 left-0 w-full  sm:h-[100vh] h-full backdrop_custom bg-custom-gradient'
-              : 'lg:w-[890px] w-full bg-custom-gradient sm:min-h-auto min-h-[420px]'
+              : 'lg:w-[780px] w-full bg-custom-gradient sm:min-h-auto min-h-[420px]'
           }`}
           style={!isMaximized && isClient? { left: position.x, top: position.y } : {}}
         >
@@ -304,7 +304,7 @@ export default function DraggableModal() {
 
                 </div>
               ) : (
-                <div className="sm:py-7 sm:px-16  p-4 flex flex-col sm:min-h-[500px] min-h-[400px] h-full sm:p-4 p-2 rounded-b-lg text-[#4C4C4C] space-y-4 overflow-hidden">
+                <div className="sm:py-7 sm:px-auto  p-4 flex flex-col sm:min-h-[500px] min-h-[400px] h-full sm:p-4 p-2 rounded-b-lg text-[#4C4C4C] space-y-4 overflow-hidden">
                   <div className='relative flex gap-2 justify-center items-center sm:mb-6 mb-4 flex-wrap'>
                      {messages.length > 0 && (
                           <div className="sm:absolute  right-0 flex gap-2 order-2">
