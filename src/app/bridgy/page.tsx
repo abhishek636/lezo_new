@@ -63,8 +63,6 @@ export default function DraggableModal() {
   }, []);
  
  
-  const marqueeText = "OPERATING SYSTEM FOR AI AGENTS";
- 
   useEffect(() => {
     setIsClient(true);
     if (typeof window !== 'undefined') {
@@ -80,7 +78,7 @@ export default function DraggableModal() {
           const adjustedLeft = windowWidth <= 768 ? 0 : centerX;
  
           // Adjust top position based on screen size (for mobile)
-          const adjustedTop = windowWidth <= 768 ? window.innerHeight / 3.5 : centerY; // For mobile, set top to 1/4 of the screen height
+          const adjustedTop = windowWidth <= 768 ? window.innerHeight / 4.6 : centerY; // For mobile, set top to 1/4 of the screen height
  
           setPosition({ x: adjustedLeft, y: adjustedTop });
         }
@@ -162,7 +160,7 @@ export default function DraggableModal() {
           className={`absolute rounded-lg border border-gray-400 backdrop_custom shadow-xl ${
             isMaximized
               ? 'top-0 left-0 w-full sm:h-[100vh] h-full backdrop_custom bg-custom-gradient'
-              : 'lg:w-[890px] w-full bg-custom-gradient sm:min-h-auto min-h-[460px]'
+              : 'lg:w-[890px] w-full bg-custom-gradient sm:min-h-auto min-h-[420px]'
           }`}
           style={!isMaximized && isClient? { left: position.x, top: position.y } : {}}
         >
@@ -211,7 +209,7 @@ export default function DraggableModal() {
           {!isMinimized && (
             <div>
               {!accepted ? (
-                <div className="flex items-center justify-center flex-1 overflow-y-auto px-6 md:px-36 py-20 md:py-28">
+                <div className="flex items-center justify-center flex-1 overflow-y-auto px-6 md:px-36 py-12 md:py-28">
                   <div className={`p-4 space-y-4 bg-custom-gradient rounded-lg transition-opacity duration-300 gradient-border ${
                     showTermsPopup ? 'opacity-0 pointer-events-none' : 'opacity-100'
                   }`}>
@@ -307,7 +305,7 @@ export default function DraggableModal() {
                 </div>
               ) : (
                 <div className="sm:py-7 sm:px-16  p-4 flex flex-col sm:min-h-[500px] min-h-[400px] h-full sm:p-4 p-2 rounded-b-lg text-[#4C4C4C] space-y-4 overflow-hidden">
-                  <div className='relative flex gap-2 justify-center items-center mb-6 flex-wrap'>
+                  <div className='relative flex gap-2 justify-center items-center sm:mb-6 mb-3 flex-wrap'>
                      {messages.length > 0 && (
                           <div className="sm:absolute  right-0 flex gap-2 order-2">
                             <button>
@@ -358,14 +356,14 @@ export default function DraggableModal() {
                     {messages.length === 0 && (
                        <div className="rounded-lg text-center text-[#4C4C4C] space-y-6">
                    
-                          <h2 className="sm:text-[40px] text-lg text-white  sm:mb-2 mb-0">
+                          <h2 className="sm:text-[40px] text-[20px] leading-none font-bold text-white  sm:mb-2 mb-0">
                             Where do you want to Bridge today?
                           </h2>
-                          <p className=" text-white">Choose from various Bridging options.</p>
+                          <p className=" text-white sm:mb-auto mb-3">Choose from various Bridging options.</p>
                           {messages.length === 0 && (
                       <div className="rounded-lg text-center text-[#4C4C4C] space-y-6 mb-4">
                         
-                        <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 max-w-[744px] mx-auto">
+                        <div className="grid grid-cols-2 sm:grid-cols-3 sm:gap-4 gap-3  max-w-[744px] mx-auto">
                           <div className="flex items-center justify-center bg-custom-gradient backdrop_custom rounded-lg sm:px-8 sm:py-4 p-3">
                             <Image src="/grid1.1.svg" alt="From Token" width={51} height={24} className="object-contain" />
                             <Image src="/right arrow.svg" alt='right arrow.svg' width={20} height={20} />

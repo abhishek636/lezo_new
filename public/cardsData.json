@@ -14,7 +14,7 @@
     "title": "Agent Store",
     "imageSrc": "/Agent.svg",
     "popupContent": {
-      "additionalCardsFile": "/additionalcardsfiles/partners.json"
+      "additionalCardsFile": "/additionalcardsfiles/agentAdditionalCards.json"
     }
   },
   {
